@@ -33,7 +33,7 @@ if [ -z "${CHECK_DOMAIN_EXISTS}" ]; then
 fi
 
 # Check that the API token is working
-USER_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer $api_token" -H "Content-Type:application/json" | jq -r '{"result"}[] | .id')
+USER_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer ${API_TOKEN}" -H "Content-Type:application/json" | jq -r '{"result"}[] | .id')
 # TODO: check what happens here when the token is wrong, what is the value of USER_ID?
 
 # Retrive your current IP address
